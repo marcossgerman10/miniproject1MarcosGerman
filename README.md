@@ -52,3 +52,10 @@ Marcos German
 ## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
+* [yfinance](https://pypi.org/project/yfinance/)
+* [matploblib](https://matplotlib.org/stable/tutorials/pyplot.html)
+* [chatgpt](https://chatgpt.com/)
