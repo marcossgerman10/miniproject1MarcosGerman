@@ -1,6 +1,7 @@
 # INF601 - Advanced Programming in Python
 # Marcos German
 # Mini Project 1
+from datetime import timedelta, datetime
 
 import matplotlib.pyplot as plt
 import numpy as np
@@ -10,10 +11,13 @@ import os
 stock_tickers = ['NFLX', 'MSFT', 'AAPL', 'GOOGL', 'DIS']
 data = {}
 
+today = datetime.today()
+ten_days_ago = today - timedelta(days=10)
+
 for stock_ticker in stock_tickers:
     stock = yf.Ticker(stock_ticker)
-    history = stock.history(period='1mo')
-    data[stock_ticker] = history['Close'].tail(10).tolist()
+    history = stock.history(start=ten_days_ago, end=today)
+    data[stock_ticker] = history['Close'].tolist()
 
 stock_arrays = {stock_ticker: np.array(prices) for stock_ticker, prices in data.items()}
 
